@@ -1,14 +1,14 @@
-#.c和.o建立关联
-.SUFFIXES:.c .o 
+#.cpp和.o建立关联
+.SUFFIXES:.cpp .o 
 
-CC=gcc
-#同时编译两个.c文件
-SRCS=hello.c\
-	add.c
+CC=g++
+#同时编译两个.cpp文件
+SRCS=main.cpp\
+	do.cpp
 
-OBJS=$(SRCS:.c=.o)
-EXEC=hello
-#依赖hello.o add.o
+OBJS=$(SRCS:.cpp=.o)
+EXEC=doEXE
+#依赖main.o do.o
 start:$(OBJS)
 	$(CC) -o $(EXEC) $(OBJS)
 	@echo '--------------ok----------'
